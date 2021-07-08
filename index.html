@@ -5,54 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calc</title>
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.min.css" />
   </head>
   <body>
-    <div class="container">
-      <header class="header">
-        <div class="mode">
-          <a href="index_light.html" class="mode__light">
-            <img src="img/light.svg" alt="light" />
-          </a>
-          <a href="#" class="mode__dark">
-            <img src="img/dark.svg" alt="dark" />
-          </a>
+    <div class="container dark">
+      <header class="mode">
+        <div class="mode__inner">
+          <label class="mode__outside dark">
+            <input type="checkbox" onclick="location.href='index_light.html'" />
+            <div class="mode__inside dark"></div>
+          </label>
+        </div>
+        <div class="mode__logo">
+          <img src="img/Logo_DARKMODE.svg" alt="logo" class="mode__logo-item" />
         </div>
       </header>
-      <section class="calc__dark">
+
+      <section class="calc">
         <div class="frame dark">
-          <div class="line"></div>
-          <div class="result result__dark">
-            <input type="text" placeholder="0" />
-          </div>
-          <ul class="btn btn__calc desctop__dark">
-            <button class="btn__box box__dark color1">AC</button>
-            <button class="btn__box box__dark color1">(</button>
-            <button class="btn__box box__dark color1">)</button>
-            <button class="btn__box box__dark color2">
+          <div class="line dark"></div>
+          <div class="display dark__text" placeholder="0"></div>
+          <div class="btn dark">
+            <button class="btn__box dark color1" onclick="reset('')">AC</button>
+            <button class="btn__box dark color1" onclick="back('')">C</button>
+            <button class="btn__box dark color1" onclick="percent('')">
+              %
+            </button>
+            <button class="btn__box dark color2" onclick="insert('/')">
               <img src="img/division.svg" alt="/" />
             </button>
-            <button class="btn__box box__dark">7</button>
-            <button class="btn__box box__dark">8</button>
-            <button class="btn__box box__dark">9</button>
-            <button class="btn__box box__dark color2">
+            <button class="btn__box dark" onclick="insert('7')">7</button>
+            <button class="btn__box dark" onclick="insert('8')">8</button>
+            <button class="btn__box dark" onclick="insert('9')">9</button>
+            <button class="btn__box dark color2" onclick="insert('*')">
               <img src="img/multiplication.svg" alt="*" />
             </button>
-            <button class="btn__box box__dark">4</button>
-            <button class="btn__box box__dark">5</button>
-            <button class="btn__box box__dark">6</button>
-            <button class="btn__box box__dark color2">-</button>
-            <button class="btn__box box__dark">1</button>
-            <button class="btn__box box__dark">2</button>
-            <button class="btn__box box__dark">3</button>
-            <button class="btn__box box__dark color2">+</button>
-            <button class="btn__box box__dark">0</button>
-            <button class="btn__box box__dark">.</button>
-            <button class="btn__box box__dark color2">
+            <button class="btn__box dark" onclick="insert('4')">4</button>
+            <button class="btn__box dark" onclick="insert('5')">5</button>
+            <button class="btn__box dark" onclick="insert('6')">6</button>
+            <button class="btn__box dark color2" onclick="insert('-')">
+              -
+            </button>
+            <button class="btn__box dark" onclick="insert('1')">1</button>
+            <button class="btn__box dark" onclick="insert('2')">2</button>
+            <button class="btn__box dark" onclick="insert('3')">3</button>
+            <button class="btn__box dark color2" onclick="insert('+')">
+              +
+            </button>
+            <button class="btn__box dark" onclick="insert('0')">0</button>
+            <button class="btn__box dark" onclick="insert('.')">.</button>
+            <button class="btn__box dark color2" onclick="minus('+-')">
               <img src="img/plusMinus.svg" alt="+-" />
             </button>
-            <button class="btn__box box__dark color2">=</button>
-          </ul>
+            <button class="btn__box dark color2" onclick="showResult('')">
+              =
+            </button>
+          </div>
         </div>
       </section>
     </div>

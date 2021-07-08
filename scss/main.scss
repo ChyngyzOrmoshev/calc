@@ -1,0 +1,196 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 1120px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* темный режим */
+.dark {
+  background: #2a2d37;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2),
+    -4px -4px 8px rgba(255, 255, 255, 0.1), inset -0.5px -0.5px 1px #181a1f,
+    inset 0.5px 0.5px 1px #4e5058, inset -4px -4px 8px rgba(255, 255, 255, 0.1),
+    inset 4px 4px 8px rgba(0, 0, 0, 0.2);
+  &__text {
+    color: #eeeeee;
+  }
+}
+
+.light {
+  background: #eeeeee;
+  box-shadow: -4px -4px 8px #ffffff, 4px 4px 8px rgba(0, 0, 0, 0.2),
+    inset -1px -1px 1px #d4d4d4, inset 1px 1px 1px #fefefe,
+    inset 4px 4px 8px rgba(0, 0, 0, 0.2), inset -4px -4px 8px #ffffff;
+
+  &__light {
+    color: #181b25;
+  }
+}
+/* переключатель */
+.mode {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+
+  &__inner {
+    width: 60%;
+    text-align: end;
+    margin-right: 40px;
+  }
+
+  &__outside {
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    height: 50px;
+    border-radius: 25px;
+  }
+
+  &__outside input {
+    display: none;
+  }
+
+  &__inside {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 25px;
+  }
+  // Внутрення часть переключателя (доработать)
+  // &__inside:before {
+  //   position: absolute;
+  //   content: "";
+  //   height: 40px;
+  //   width: 40px;
+  //   left: 8px;
+  //   bottom: 5px;
+  //   border-radius: 25px;
+  //   background-color: linear-gradient(136.72deg, #3c3f49 3.23%, #181b25 97.26%);
+  //   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5),
+  //     -4px -4px 8px rgba(255, 255, 255, 0.2), inset -1px -1px 1px #181a1f,
+  //     inset 1px 1px 1px #4e5058, inset -4px -4px 8px rgba(255, 255, 255, 0.2),
+  //     inset 4px 4px 8px rgba(0, 0, 0, 0.5);
+  //   -webkit-transition: 0.4s;
+  //   transition: 0.4s;
+  // }
+
+  // input:checked + &__inside {
+  //   background-color: linear-gradient(136.72deg, #3c3f49 3.23%, #181b25 97.26%);
+  // }
+
+  // input:focus + &__inside {
+  //   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5),
+  //     -4px -4px 8px rgba(255, 255, 255, 0.2), inset -1px -1px 1px #181a1f,
+  //     inset 1px 1px 1px #4e5058, inset -4px -4px 8px rgba(255, 255, 255, 0.2),
+  //     inset 4px 4px 8px rgba(0, 0, 0, 0.5);
+  // }
+
+  // input:checked + &__inside:before {
+  //   -webkit-transform: translateX(26px);
+  //   -ms-transform: translateX(26px);
+  //   transform: translateX(26px);
+  // }
+
+  /* логотип */
+  &__logo {
+    width: 40%;
+  }
+
+  &__logo-item {
+    width: 100%;
+  }
+}
+
+/* калькулятор */
+.frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 373px;
+  height: 812px;
+  border-radius: 6px;
+  margin: 0 auto;
+}
+
+.line {
+  width: 150px;
+  height: 4px;
+  border-radius: 6px;
+  margin-top: 38px;
+}
+
+.display {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  text-align: right;
+  font-size: 54px;
+  font-family: "Lato", sans-serif;
+  padding: 20px;
+  word-break: break-all;
+}
+
+.btn {
+  display: grid;
+  grid-gap: 22px;
+  column-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  padding: 15px;
+
+  &__box {
+    cursor: pointer;
+    width: 62px;
+    height: 62px;
+    font-size: 26px;
+    border-radius: 6px;
+    margin: 0 auto;
+    border: 0;
+  }
+
+  &__box:hover {
+    font-size: 30px;
+  }
+
+  .dark:active {
+    background: #2a2d37;
+    box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.2),
+      inset 4px 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+  }
+
+  .light:active {
+    background: #eeeeee;
+    box-shadow: 
+      inset 4px 4px 8px rgba(0, 0, 0, 0.2), inset -4px -4px 8px #ffffff;
+  }
+}
+
+.color1 {
+  color: #43efce;
+}
+
+.color2 {
+  color: #dc6c6e;
+}

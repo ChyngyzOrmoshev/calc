@@ -16,13 +16,7 @@ function insert(data) {
 
 function isNotDuplicate(sign) {
   return (
-    sign == "+" ||
-    sign == "-" ||
-    sign == "/" ||
-    sign == "*" ||
-    sign == "." ||
-    sign == "+-" ||
-    sign == "%"
+    sign == "+" || sign == "-" || sign == "/" || sign == "*" || sign == "."
   );
 }
 
@@ -43,16 +37,5 @@ function showResult() {
 }
 
 function minus() {
-  let minusData = display.innerText;
-  if (minusData == 0) {
-    display.innerText = minusData;
-  } else {
-    display.innerText = minusData * -1;
-  }
-}
-
-function percent() {
-  let prc = display.innerText;
-
-  display.innerText = (display.innerText * prc) / 100;
+  let current
 }
